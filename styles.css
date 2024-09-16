@@ -13,7 +13,26 @@ body {
   font-family: Baskervville, serif;
   color: linen;
   background-color: rgb(20,30,40); /*sama kayak #141e24*/
-  
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: linen;
+}
+
+main {
+  display: grid;
+  /*grid-template-columns: 1fr 94rem 1fr;*/ /*3 section*/
+  grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
+  /*Use the minmax function to make your columns responsive on any device. The minmax function takes two arguments, the first being the minimum value and the second being the maximum. These values could be a length, percentage, fr, or even a keyword like max-content. Wrap each of your already defined values of the grid-template-columns property in a minmax function, using each value as the second argument. The first argument should be 2rem, min-content, and 2rem respectively.*/
 }
 
 .author {
