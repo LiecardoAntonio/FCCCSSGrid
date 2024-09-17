@@ -32,29 +32,26 @@ main {
   display: grid;
   /*grid-template-columns: 1fr 94rem 1fr;*/ /*3 section*/
   grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
-  /*Use the minmax function to make your columns responsive on any device. The minmax function takes two arguments, the first being the minimum value and the second being the maximum. These values could be a length, percentage, fr, or even a keyword like max-content. Wrap each of your already defined values of the grid-template-columns property in a minmax function, using each value as the second argument. The first argument should be 2rem, min-content, and 2rem respectively.*/
+  /*Use the minmax function to make your columns responsive on any device. The minmax function takes two arguments, the first being the minimum value and the second being the maximum. These values could be a length, percentage, fr, or even a keyword like max-content. Wrap each of your already defined values of the grid-template-columns property in a minmax function, using each value as the second argument. The first argument should be 2rem, min-content, and 2rem respectively. more about size (intrinsic and extrinsic: https://blog.logrocket.com/understanding-min-content-max-content-fit-content-css/)*/
+  row-gap: 3rem;
 }
 
-.author {
-
-}
-
-.publish-date {
-
-}
-
-.social-icons {
-
+.heading {
+  grid-column: 2 / 3; /*mulai dari col2 dan stop sebelum 3*/
+  /* One option is the grid-column property, which is shorthand for grid-column-start and grid-column-end. The grid-column property tells the grid item which grid line to start and end at. Create a .heading rule and set the grid-column property to 2 / 3. This will tell the .heading element to start at grid line 2 and end at grid line 3. */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /*this mean there will be 2 content for each 1fraction*/
+  /* The CSS repeat() function is used to repeat a value, rather than writing it out manually, and is helpful for grid layouts. For example, setting the grid-template-columns property to repeat(20, 200px) would create 20 columns each 200px wide. Give your .heading element a grid-template-columns property set to repeat(2, 1fr) to create two columns of equal width. */
+  row-gap: 1.5rem;
 }
 
 .text {
-
+  grid-column: 2/3;
+  display: grid;
 }
 
-.first-paragraph {
-
-}
-
-.quote {
-  
+.hero {
+  grid-column: 1 / -1;
+  /* Remember that the grid-column property determines which columns an element starts and ends at. There may be times where you are unsure of how many columns your grid will have, but you want an element to stop at the last column. To do this, you can use -1 for the end column. Create a .hero selector and give it a grid-column property set to 1 / -1. This will tell the element to span the full width of the grid. */
+  position: relative;
 }
